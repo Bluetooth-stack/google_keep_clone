@@ -139,6 +139,10 @@
   }
 }
 @media screen and (max-width: 588px) {
+  .navbar {
+    padding-left: 0.28rem;
+    padding-right: 0.28rem;
+  }
   .search-holder {
     display: none;
   }
@@ -158,16 +162,16 @@
   .view-holder .mobile-search .search-icon {
     transform: scale(0.9);
   }
-  .menu-logo-holder{
+  .menu-logo-holder {
     min-width: 5.5rem;
   }
-  .menu-logo-holder h2{
+  .menu-logo-holder h2 {
     font-size: 1.2rem;
   }
   .menu-icon-holder .menu-icon {
     transform: scale(0.9);
   }
-  .menu-logo-holder h2 .logo-icon{
+  .menu-logo-holder h2 .logo-icon {
     transform: scale(0.8);
   }
 }
