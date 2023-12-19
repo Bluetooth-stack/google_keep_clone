@@ -1,0 +1,173 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.4rem 0.4rem;
+  box-shadow: 0 0 5px rgb(122, 122, 122);
+  position: relative;
+}
+
+.menu-logo-holder,
+.view-holder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 7rem;
+}
+
+.menu-logo-holder h2 {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: rgb(114, 114, 114);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+
+.menu-logo-holder .menu-icon-holder {
+  padding: 0.4rem 0.4rem 0.15rem 0.4rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.menu-icon-holder .menu-icon {
+  color: rgb(129, 129, 129);
+}
+
+.menu-icon-holder:hover {
+  background-color: rgba(236, 236, 236, 0.89);
+}
+
+.menu-logo-holder h2:hover > .logo-icon {
+  color: rgb(247, 211, 10);
+  filter: drop-shadow(0 0 8px rgb(255, 217, 0));
+}
+
+.search-holder,
+.view-holder .mobile-search-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 1rem;
+  background-color: rgba(243, 243, 243, 0.747);
+  border-radius: 0.5rem;
+  transition: 0.2s ease-in-out;
+}
+
+.search-holder .search-field,
+.view-holder .mobile-search-holder .mobile-search-field {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: 28.6rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+  color: rgb(131, 131, 131);
+}
+
+.search-holder .search-icon,
+.mobile-search-holder .arrowIcon {
+  color: rgb(131, 131, 131);
+  cursor: pointer;
+}
+
+.search-holder:focus-within {
+  background-color: transparent;
+  box-shadow: 0 0 5px rgb(126, 125, 125);
+}
+
+.view-holder {
+  min-width: 5rem;
+  /* gap: 0.5rem; */
+}
+
+.view-holder .view-icon-holder,
+.view-holder .mobile-search {
+  padding: 0.4rem 0.4rem 0.2rem 0.4rem;
+  transition: 0.2rem ease-in-out;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.view-holder .grid-view,
+.view-holder .list-view,
+.view-holder .user-profile,
+.view-holder .mobile-search .search-icon {
+  color: grey;
+  transform: scale(1.1);
+}
+
+.view-holder .view-icon-holder:hover,
+.view-holder .mobile-search:hover {
+  background-color: rgba(236, 236, 236, 0.89);
+}
+
+.view-holder .mobile-search {
+  display: none;
+}
+
+.view-holder .mobile-search-holder {
+  background-color: white;
+  box-shadow: 0 0 5px rgb(126, 125, 125);
+  position: absolute;
+  left: 1.2rem;
+  z-index: 10;
+}
+
+.view-holder .mobile-search-holder .mobile-search-field {
+  width: 18rem;
+}
+
+@media screen and (max-width: 840px) {
+  .search-holder .search-field {
+    width: 24rem;
+  }
+}
+@media screen and (max-width: 720px) {
+  .search-holder .search-field {
+    width: 20rem;
+  }
+}
+@media screen and (max-width: 668px) {
+  .search-holder .search-field {
+    width: 16rem;
+  }
+}
+@media screen and (max-width: 588px) {
+  .search-holder {
+    display: none;
+  }
+  .view-holder .mobile-search {
+    display: flex;
+  }
+}
+@media screen and (max-width: 539px) {
+  .view-holder .mobile-search-holder .mobile-search-field {
+    width: 10rem;
+  }
+}
+@media screen and (max-width: 384px) {
+  .view-holder .grid-view,
+  .view-holder .list-view,
+  .view-holder .user-profile,
+  .view-holder .mobile-search .search-icon {
+    transform: scale(0.9);
+  }
+  .menu-logo-holder{
+    min-width: 5.5rem;
+  }
+  .menu-logo-holder h2{
+    font-size: 1.2rem;
+  }
+  .menu-icon-holder .menu-icon {
+    transform: scale(0.9);
+  }
+  .menu-logo-holder h2 .logo-icon{
+    transform: scale(0.8);
+  }
+}
