@@ -1,4 +1,4 @@
-.edit-card-modal{
+.modal-holder{
     height: 100dvh;
     width: 100dvw;
     position: absolute;
@@ -9,4 +9,60 @@
     align-items: center;
     justify-content: center;
     z-index: 10000;
+}
+
+.delete-confirm-modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0 1rem 1rem 1rem;
+    background-color: rgb(226, 225, 225);
+    color: rgb(41, 41, 41);
+    border-radius: 0.5rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.delete-confirm-modal .alert-heading{
+    font-weight: 400;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.alert-heading .alert-icon{
+    color: rgb(255, 44, 44);
+}
+
+.delete-confirm-modal .alert-message{
+    margin-top: 0;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.delete-confirm-modal .confirm-btn-holder{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.delete-confirm-modal .confirm-btn-holder .btn{
+    padding: 0.2rem 0.5rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.delete-confirm-modal .confirm-btn-holder .btn:hover{
+    background-color: rgba(163, 163, 163, 0.918);
+}
+
+.delete-confirm-modal .confirm-btn-holder .delete-btn{
+    color: rgb(255, 44, 44);
+}
+.delete-confirm-modal .confirm-btn-holder .cancel-btn{
+    color: rgb(78, 78, 78);
 }

@@ -31,7 +31,7 @@ function EditModal({ curTodo, setShowModal }) {
     }
 
     return (
-        <div className='edit-card-modal' onClick={()=>{setShowModal(false)}}>
+        <div className='modal-holder' onClick={()=>{setShowModal(false)}}>
             <TaskInput
                 title={editedTitle} setTitle={setEditedTitle}
                 content={editedContent} setContent={setEditedContent}

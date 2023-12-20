@@ -6,12 +6,14 @@ import FormatColorResetOutlinedIcon from '@mui/icons-material/FormatColorResetOu
 import { colors } from '../../Constants';
 import { Context } from '../../Context/Provider';
 import EditModal from '../Common/Modal/EditModal';
+import DeleteModal from '../Common/Modal/DeleteModal';
 
 
 function Card({ curTodo, listView }) {
   const [selectedColor, setSelectedColor] = useState(curTodo.color);
   const [showPalate, setShowPalate] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
   const { todo, setTodo } = useContext(Context)
 
   useEffect(() => {
@@ -33,9 +35,20 @@ function Card({ curTodo, listView }) {
     setShowEditModal(true);
   }
 
+  function handleClickOnDelete(e){
+    e.stopPropagation();
+    setShowDeleteModal(true);
+  }
+
   if (showEditModal) {
     return (
       <EditModal curTodo={curTodo} setShowModal={setShowEditModal} />
+    )
+  }
+
+  if(showDeleteModal){
+    return(
+      <DeleteModal selectedTodo={curTodo} setShowModal={setShowDeleteModal} />
     )
   }
 
@@ -51,7 +64,7 @@ function Card({ curTodo, listView }) {
       <div className='edit-option-holder'>
         <ColorLensOutlinedIcon className='palate-icon'
           onClick={(e) => { e.stopPropagation(); setShowPalate(() => !showPalate) }} />
-        <DeleteOutlineOutlinedIcon className='palate-icon' />
+        <DeleteOutlineOutlinedIcon className='palate-icon' onClick={handleClickOnDelete} />
       </div>
 
       {
