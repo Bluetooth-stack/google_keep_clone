@@ -106,3 +106,19 @@
 .buton-holder .color-option-holder .view-color:hover{
   border-color: rgb(36, 36, 36) !important;
 }
+
+@media screen and (max-width: 533px) {
+  .task-input-holder{
+    width: 21rem;
+  }
+}
+@media screen and (max-width: 429px) {
+  .task-input-holder{
+    width: 17rem;
+  }
+}
+@media screen and (max-width: 357px) {
+  .task-input-holder{
+    width: 13rem;
+  }
+}

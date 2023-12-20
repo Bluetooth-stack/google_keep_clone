@@ -1,4 +1,5 @@
 .grid-view{
+    margin-left: 1.5rem;
     margin-top: 1.5rem;
     display: flex;
     align-items: center;
@@ -6,3 +7,9 @@
     flex-wrap: wrap;
     gap: 1.5rem;
 }
+
+@media screen and (max-width: 632px) {
+    .grid-view{
+        justify-content: center;
+    }
+  }
