@@ -12,12 +12,13 @@
 }
 
 .sidebar:hover {
-  width: 13rem !important;
+  width: 12rem !important;
 }
 
 .sidebar .icon-holder {
-  width: 13rem;
-  padding: 0 0.5rem;
+  width: 12rem;
+  padding: 0.5rem;
+  padding-left: 0.66rem;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -31,7 +32,6 @@
 }
 
 .sidebar .icon-holder .icon {
-  padding: 0.5rem;
   color: rgb(153, 153, 153);
 }
 

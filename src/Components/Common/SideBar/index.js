@@ -9,7 +9,7 @@ import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 function SideBar({sideBarOpen}) {
   
   return (
-    <div className='sidebar' style={{width:sideBarOpen?'13rem':'3.5rem'}}>
+    <div className='sidebar' style={{width:sideBarOpen?'12rem':'3rem'}}>
       <a href='/' className='bulb-holder icon-holder active'>
         <LightbulbOutlinedIcon className='bulb-icon icon' />
         <span>Notes</span>

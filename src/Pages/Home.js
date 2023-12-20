@@ -1,9 +1,10 @@
-import React from 'react';
+import React from 'react'
+import TaskInput from '../Components/TaskInput'
 
-function Home() {
+function Home({openInput, setOpenInput}) {
   return (
     <div className='main-page'>
-        <h1>home</h1>
+      <TaskInput openInput={openInput} setOpenInput={setOpenInput} />
     </div>
   )
 }

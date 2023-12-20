@@ -1,3 +1,11 @@
+.App{
+    min-height: 60dvh;
+}
+
 .main-page{
-    margin-left: 5rem;
+    margin: 1.5rem 0.6rem;
+    margin-left: 3.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

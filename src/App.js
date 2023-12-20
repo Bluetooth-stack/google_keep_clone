@@ -7,12 +7,13 @@ import SideBar from './Components/Common/SideBar';
 function App() {
   const [sideBarOpen, setSideBarOpen] = useState(false);
   const [grid, setGrid] = useState(true);
+  const [openInput, setOpenInput] = useState(false)
 
   return (
-    <div className="App">
+    <div className="App" onClick={()=>{setOpenInput(false)}}>
       <Navbar setSideBarOpen={setSideBarOpen} sideBarOpen={sideBarOpen} grid={grid} setGrid={setGrid} />
       <SideBar sideBarOpen={sideBarOpen} />
-      <Home />
+      <Home openInput={openInput} setOpenInput={setOpenInput} />
     </div>
   );
 }
