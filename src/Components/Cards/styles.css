@@ -57,7 +57,6 @@
 
 .card .color-option-holder {
   position: absolute;
-  bottom: -2rem;
   box-shadow: 0 0 4px rgb(134, 134, 134);
   background-color: rgb(255, 255, 255);
   border-radius: 0.2rem;
@@ -67,6 +66,14 @@
   align-items: center;
   gap: 0.5rem;
   z-index: 10;
+}
+
+.grid-view-card .color-option-holder{
+  bottom: -3.8rem;
+}
+
+.list-view-card .color-option-holder{
+  bottom: -2rem;
 }
 
 .card .color-option-holder .view-color .reset-color-icon {
