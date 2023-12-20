@@ -5,16 +5,17 @@ import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
 import FormatColorResetOutlinedIcon from '@mui/icons-material/FormatColorResetOutlined';
 import { colors } from '../../Constants';
 
-function Card({showPalate, setShowPalate}) {
-  const [selectedColor, setSelectedColor] = useState('#FFFFFF')
+function Card({showPalate, setShowPalate, todo}) {
+  const [selectedColor, setSelectedColor] = useState(todo.color)
 
   return (
     <div
       className='card'
+      style={{background: selectedColor}}
       onClick={(e) => { e.stopPropagation(); setShowPalate(false) }}
     >
-      <h4>Title</h4>
-      <p>some problem to do befor you sleep.</p>
+      <h4>{todo?.title?todo.title:''}</h4>
+      <p>{todo.content}</p>
 
       <div className='edit-option-holder'>
         <ColorLensOutlinedIcon className='palate-icon'

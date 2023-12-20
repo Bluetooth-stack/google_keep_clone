@@ -6,7 +6,7 @@ function Home({
   openInput, setOpenInput,
   selectedColor, setSelectedColor,
   title, setTitle, content, setContent,
-  handleCreateTask, grid
+  handleCreateTask, grid, todos
 }) {
 
   return (
@@ -18,7 +18,7 @@ function Home({
         content={content} setContent={setContent}
         handleCreate={handleCreateTask}
       />
-      <GridView />
+      <GridView todos={todos} />
     </div>
   )
 }

@@ -1,4 +1,5 @@
 .navbar {
+  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -6,7 +7,7 @@
   box-shadow: 0 0 5px rgb(122, 122, 122);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
 }
 
 .menu-logo-holder,
@@ -101,6 +102,7 @@
 .view-holder .mobile-search .search-icon {
   color: rgb(128, 128, 128);
   transform: scale(1.1);
+  margin: 0;
 }
 
 .view-holder .view-icon-holder:hover,
