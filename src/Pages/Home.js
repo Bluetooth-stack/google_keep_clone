@@ -6,7 +6,10 @@ import { Context } from '../Context/Provider';
 
 function Home({ handleCreateTask }) {
 
-  const { grid, selectedColor, setSelectedColor, title, setTitle, content, setContent } = useContext(Context);
+  const {
+    grid, selectedColor, setSelectedColor,
+    title, setTitle, content, setContent,
+    openInput, setOpenInput } = useContext(Context);
 
   return (
     <div className='main-page'>
@@ -18,6 +21,9 @@ function Home({ handleCreateTask }) {
         setTitle={setTitle}
         content={content}
         setContent={setContent}
+        btnText={'Create'}
+        openInput={openInput}
+        setOpenInput={setOpenInput}
       />
       {
         grid ?

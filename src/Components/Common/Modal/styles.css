@@ -1,0 +1,12 @@
+.edit-card-modal{
+    height: 100dvh;
+    width: 100dvw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(80, 80, 80, 0.521);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}

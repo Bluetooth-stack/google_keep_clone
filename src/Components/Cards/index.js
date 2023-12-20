@@ -5,11 +5,13 @@ import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
 import FormatColorResetOutlinedIcon from '@mui/icons-material/FormatColorResetOutlined';
 import { colors } from '../../Constants';
 import { Context } from '../../Context/Provider';
+import EditModal from '../Common/Modal/EditModal';
 
 
-function Card({ curTodo, list }) {
+function Card({ curTodo, listView }) {
   const [selectedColor, setSelectedColor] = useState(curTodo.color);
   const [showPalate, setShowPalate] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
   const { todo, setTodo } = useContext(Context)
 
   useEffect(() => {
@@ -22,13 +24,26 @@ function Card({ curTodo, list }) {
       }
     })
     setTodo(editedTodo)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedColor, curTodo.id])
+
+  function handleClickOnCard(e) {
+    e.stopPropagation();
+    setShowPalate(() => false)
+    setShowEditModal(true);
+  }
+
+  if (showEditModal) {
+    return (
+      <EditModal curTodo={curTodo} setShowModal={setShowEditModal} />
+    )
+  }
 
   return (
     <div
-      className={`card ${list === 'yes' ? 'list-view-card' : list === 'no' ? 'grid-view-card' : ''}`}
+      className={`card ${listView === 'yes' ? 'list-view-card' : listView === 'no' ? 'grid-view-card' : ''}`}
       style={{ background: selectedColor }}
-      onClick={(e) => { e.stopPropagation(); setShowPalate(() => false) }}
+      onClick={handleClickOnCard}
     >
       <h4>{curTodo?.title ? curTodo.title : ''}</h4>
       <p>{curTodo.content}</p>

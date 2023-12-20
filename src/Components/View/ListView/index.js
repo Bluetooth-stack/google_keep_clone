@@ -11,7 +11,7 @@ function ListView() {
         <div className='list-view'>
             {
                 todo.map((todo, indx) => (
-                    <Card todo={todo} key={todo.color + indx} list={'yes'} />
+                    <Card todo={todo} key={todo.color + indx} listView={'yes'} />
                 ))
             }
         </div>

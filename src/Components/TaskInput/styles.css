@@ -20,12 +20,13 @@
   font-size: 0.94rem;
   font-weight: 400;
   font-family: "Poppins", sans-serif;
-  color: rgb(131, 131, 131);
+  color: rgb(46, 46, 46);
   resize: none;
 }
 
 .task-input-holder .content-input{
     font-size: 0.85rem;
+    overflow: auto;
 }
 .task-input-holder .title-input{
     font-weight: 500;
@@ -49,7 +50,7 @@
 
 .task-input-holder .buton-holder .edit-palate .palate-icon {
   transform: scale(1.15);
-  color: rgb(112, 112, 112);
+  color: rgb(70, 70, 70);
   padding: 0.25rem;
   border-radius: 50%;
   cursor: pointer;
@@ -65,7 +66,7 @@
   font-size: 0.8rem;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
-  color: rgb(143, 143, 143);
+  color: rgb(70, 70, 70);
   text-align: center;
   padding: 0.2rem 0.8rem;
   transition: 0.2s ease-in-out;

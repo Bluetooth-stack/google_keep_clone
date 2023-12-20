@@ -11,7 +11,7 @@ function GridView() {
     <div className='grid-view' >
       {
         todo.map((todo, indx) => (
-          <Card curTodo={todo} key={todo.color + indx} list={'no'} />
+          <Card curTodo={todo} key={todo.color + indx} listView={'no'} />
         ))
       }
 

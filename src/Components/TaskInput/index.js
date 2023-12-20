@@ -1,14 +1,16 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import './styles.css'
 import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
 import FormatColorResetOutlinedIcon from '@mui/icons-material/FormatColorResetOutlined';
-import { colors } from '../../Constants';
-import { Context } from '../../Context/Provider';
+import { colors } from '../../Constants';;
 
-function TaskInput({ selectedColor, setSelectedColor, title, setTitle, content, setContent, handleCreate }) {
+function TaskInput({
+    selectedColor, setSelectedColor,
+    title, setTitle, content, setContent,
+    handleCreate, btnText, openInput, setOpenInput
+}) {
 
     const [showPalate, setShowPalate] = useState(false);
-    const { openInput, setOpenInput } = useContext(Context)
 
     return (
         <div
@@ -40,7 +42,7 @@ function TaskInput({ selectedColor, setSelectedColor, title, setTitle, content, 
                             onClick={(e) => { e.stopPropagation(); setShowPalate(!showPalate) }} />
                     </div>
 
-                    <div role='button' className='create-button' onClick={handleCreate}>Create</div>
+                    <div role='button' className='create-button' onClick={handleCreate}>{btnText}</div>
 
                     {
                         showPalate &&
