@@ -1,0 +1,47 @@
+.sidebar {
+  height: 100dvh;
+  padding-top: 1.5rem;
+  overflow: hidden;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  z-index: 10;
+  transition: 0.3s ease-in-out;
+}
+
+.sidebar:hover {
+  width: 13rem !important;
+}
+
+.sidebar .icon-holder {
+  width: 13rem;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: 0.3s ease-in-out;
+}
+
+.sidebar .icon-holder span {
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  color: rgb(153, 153, 153);
+}
+
+.sidebar .icon-holder .icon {
+  padding: 0.5rem;
+  color: rgb(153, 153, 153);
+}
+
+.sidebar .active {
+  background-color: rgb(247, 211, 10);
+}
+.sidebar .active .icon, .sidebar .active span {
+  color: rgb(56, 55, 55);
+}
+
+.sidebar .icon-holder:hover {
+  background-color: rgba(236, 236, 236, 0.5);
+}

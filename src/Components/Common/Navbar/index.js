@@ -8,15 +8,17 @@ import SplitscreenOutlinedIcon from '@mui/icons-material/SplitscreenOutlined';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
-function Navbar() {
-  const [grid, setGrid] = useState(true);
+function Navbar({setSideBarOpen, sideBarOpen, grid, setGrid}) {
+  
   const [mobileSearch, setMobileSearch] = useState(false);
 
   return (
     <div className='navbar'>
 
       <div className='menu-logo-holder'>
-        <span className='menu-icon-holder'><MenuIcon className='menu-icon' /></span>
+        <span className='menu-icon-holder' onClick={()=>{setSideBarOpen(!sideBarOpen)}}>
+          <MenuIcon className='menu-icon' />
+        </span>
         <h2 className='logo-holder'><LightbulbIcon className='logo-icon' />Day</h2>
       </div>
 

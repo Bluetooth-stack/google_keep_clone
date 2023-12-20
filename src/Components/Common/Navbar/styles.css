@@ -4,7 +4,9 @@
   align-items: center;
   padding: 0.5rem 1.4rem 0.4rem;
   box-shadow: 0 0 5px rgb(122, 122, 122);
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .menu-logo-holder,
