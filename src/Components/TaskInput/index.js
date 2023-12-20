@@ -4,7 +4,12 @@ import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
 import FormatColorResetOutlinedIcon from '@mui/icons-material/FormatColorResetOutlined';
 import { colors } from '../../Constants';
 
-function TaskInput({ openInput, setOpenInput, selectedColor, setSelectedColor }) {
+function TaskInput(
+    {
+        openInput, setOpenInput, selectedColor, setSelectedColor,
+        title, setTitle, content, setContent, handleCreate
+    }) {
+
     const [showPalate, setShowPalate] = useState(false)
 
     return (
@@ -15,13 +20,18 @@ function TaskInput({ openInput, setOpenInput, selectedColor, setSelectedColor })
         >
             {
                 openInput &&
-                <input type="text" name='title' placeholder='Title' className='title-input' />
+                <input type="text" name='title' placeholder='Title' className='title-input'
+                    value={title}
+                    onChange={(e) => { setTitle(e.target.value) }}
+                />
             }
             <textarea
                 cols="48" rows="1"
                 placeholder='Take a note...'
                 name='content' className='content-input'
                 onClick={() => { setOpenInput(true) }}
+                value={content}
+                onChange={(e) => { setContent(e.target.value) }}
             >
             </textarea>
             {
@@ -32,14 +42,14 @@ function TaskInput({ openInput, setOpenInput, selectedColor, setSelectedColor })
                             onClick={(e) => { e.stopPropagation(); setShowPalate(!showPalate) }} />
                     </div>
 
-                    <div role='button' className='create-button' onClick={() => { setOpenInput(false) }}>Create</div>
+                    <div role='button' className='create-button' onClick={handleCreate}>Create</div>
 
                     {
                         showPalate &&
                         <div className='color-option-holder'>
                             <span
                                 className='view-color'
-                                style={{borderColor: selectedColor==='#FFFFFF'? 'black': 'transparent'}}
+                                style={{ borderColor: selectedColor === '#FFFFFF' ? 'black' : 'transparent' }}
                                 onClick={(e) => { e.stopPropagation(); setSelectedColor('#FFFFFF') }}
                             >
                                 <FormatColorResetOutlinedIcon className='reset-color-icon' />
@@ -48,7 +58,7 @@ function TaskInput({ openInput, setOpenInput, selectedColor, setSelectedColor })
                                 colors.map((color, indx) => (
                                     <span
                                         key={color + indx}
-                                        style={{ background: color, borderColor: selectedColor===color? 'black': 'transparent' }} 
+                                        style={{ background: color, borderColor: selectedColor === color ? 'black' : 'transparent' }}
                                         className='view-color'
                                         onClick={(e) => { e.stopPropagation(); setSelectedColor(color) }}
                                     ></span>
