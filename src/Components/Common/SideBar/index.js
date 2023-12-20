@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './styles.css';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+import { Context } from '../../../Context/Provider';
 
-function SideBar({sideBarOpen}) {
-  
+function SideBar() {
+
+  const {sideBarOpen} = useContext(Context);
+
   return (
     <div className='sidebar' style={{width:sideBarOpen?'12rem':'3rem'}}>
       <a href='/' className='bulb-holder icon-holder active'>

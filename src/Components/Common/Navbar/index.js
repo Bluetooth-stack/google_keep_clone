@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './styles.css';
 import MenuIcon from '@mui/icons-material/Menu';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
@@ -7,10 +7,12 @@ import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
 import SplitscreenOutlinedIcon from '@mui/icons-material/SplitscreenOutlined';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { Context } from '../../../Context/Provider';
 
-function Navbar({ setSideBarOpen, sideBarOpen, grid, setGrid }) {
+function Navbar() {
 
   const [mobileSearch, setMobileSearch] = useState(false);
+  const {setSideBarOpen, sideBarOpen, grid, setGrid} = useContext(Context);
 
   return (
     <div className='navbar'>

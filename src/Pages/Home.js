@@ -1,29 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import TaskInput from '../Components/TaskInput';
 import GridView from '../Components/View/GridView';
 import ListView from '../Components/View/ListView';
+import { Context } from '../Context/Provider';
 
-function Home({
-  openInput, setOpenInput,
-  selectedColor, setSelectedColor,
-  title, setTitle, content, setContent,
-  handleCreateTask, grid, todos
-}) {
+function Home({ handleCreateTask }) {
+
+  const { grid, selectedColor, setSelectedColor, title, setTitle, content, setContent } = useContext(Context);
 
   return (
     <div className='main-page'>
       <TaskInput
-        openInput={openInput} setOpenInput={setOpenInput}
-        selectedColor={selectedColor} setSelectedColor={setSelectedColor}
-        title={title} setTitle={setTitle}
-        content={content} setContent={setContent}
         handleCreate={handleCreateTask}
+        selectedColor={selectedColor}
+        setSelectedColor={setSelectedColor}
+        title={title}
+        setTitle={setTitle}
+        content={content}
+        setContent={setContent}
       />
       {
         grid ?
-          <GridView todos={todos} />
+          <GridView />
           :
-          <ListView todos={todos} />
+          <ListView />
       }
     </div>
   )

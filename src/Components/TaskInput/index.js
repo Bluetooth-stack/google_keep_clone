@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './styles.css'
 import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
 import FormatColorResetOutlinedIcon from '@mui/icons-material/FormatColorResetOutlined';
 import { colors } from '../../Constants';
+import { Context } from '../../Context/Provider';
 
-function TaskInput(
-    {
-        openInput, setOpenInput, selectedColor, setSelectedColor,
-        title, setTitle, content, setContent, handleCreate
-    }) {
+function TaskInput({ selectedColor, setSelectedColor, title, setTitle, content, setContent, handleCreate }) {
 
-    const [showPalate, setShowPalate] = useState(false)
+    const [showPalate, setShowPalate] = useState(false);
+    const { openInput, setOpenInput } = useContext(Context)
 
     return (
         <div

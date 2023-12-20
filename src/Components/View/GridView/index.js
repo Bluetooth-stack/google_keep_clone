@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './styles.css'
 import Card from '../../Cards';
+import { Context } from '../../../Context/Provider';
 
-function GridView({ todos }) {
+function GridView() {
 
+  const {todo} = useContext(Context)
 
   return (
     <div className='grid-view' >
       {
-        todos.map((todo, indx) => (
-          <Card todo={todo} key={todo.color + indx} list={'no'} />
+        todo.map((todo, indx) => (
+          <Card curTodo={todo} key={todo.color + indx} list={'no'} />
         ))
       }
 
