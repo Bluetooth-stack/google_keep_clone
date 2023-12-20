@@ -1,6 +1,10 @@
+
+/* to make app clickable even with no content */
 .App{
     min-height: 60dvh;
 }
+
+/* main page default style */
 
 .main-page{
     margin: 1.5rem 0.5rem;
