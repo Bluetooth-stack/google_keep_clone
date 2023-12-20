@@ -5,7 +5,7 @@ import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
 import FormatColorResetOutlinedIcon from '@mui/icons-material/FormatColorResetOutlined';
 import { colors } from '../../Constants';
 
-function Card({todo}) {
+function Card({todo, list}) {
   const [selectedColor, setSelectedColor] = useState(todo.color);
   const [showPalate, setShowPalate] = useState(false);
 
@@ -26,7 +26,7 @@ function Card({todo}) {
 
   return (
     <div
-      className='card'
+      className={`card ${list==='yes'?'list-view-card':list==='no'?'grid-view-card': ''}`}
       style={{background: selectedColor}}
       onClick={(e) => { e.stopPropagation(); setShowPalate(()=>false) }}
     >

@@ -1,6 +1,7 @@
 import React from 'react';
 import TaskInput from '../Components/TaskInput';
 import GridView from '../Components/View/GridView';
+import ListView from '../Components/View/ListView';
 
 function Home({
   openInput, setOpenInput,
@@ -18,7 +19,12 @@ function Home({
         content={content} setContent={setContent}
         handleCreate={handleCreateTask}
       />
-      <GridView todos={todos} />
+      {
+        grid ?
+          <GridView todos={todos} />
+          :
+          <ListView todos={todos} />
+      }
     </div>
   )
 }
