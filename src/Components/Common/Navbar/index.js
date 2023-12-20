@@ -12,8 +12,7 @@ import { Context } from '../../../Context/Provider';
 function Navbar() {
 
   const [mobileSearch, setMobileSearch] = useState(false);
-  const [searched, setSearched] = useState('');
-  const { setSideBarOpen, sideBarOpen, grid, setGrid, todo, setFilteredTodo } = useContext(Context);
+  const { setSideBarOpen, sideBarOpen, grid, setGrid, todo, setFilteredTodo, searched, setSearched } = useContext(Context);
 
   function searchChange(e) {
     setFilteredTodo(todo.filter((item)=>item?.title?.includes(e.target.value)));

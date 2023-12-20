@@ -3,13 +3,14 @@ import TaskInput from '../Components/TaskInput';
 import GridView from '../Components/View/GridView';
 import ListView from '../Components/View/ListView';
 import { Context } from '../Context/Provider';
+import LightOutlinedIcon from '@mui/icons-material/LightOutlined';
 
 function Home({ handleCreateTask }) {
 
   const {
     grid, selectedColor, setSelectedColor,
     title, setTitle, content, setContent,
-    openInput, setOpenInput } = useContext(Context);
+    openInput, setOpenInput, todo } = useContext(Context);
 
   return (
     <div className='main-page'>
@@ -26,6 +27,12 @@ function Home({ handleCreateTask }) {
         setOpenInput={setOpenInput}
       />
       {
+        !todo.length?
+        <div className='empty-placeHolder'>
+          <LightOutlinedIcon className='placeholder-light-icon' />
+          <p>Notes you add appear here</p>
+        </div>
+        :
         grid ?
           <GridView />
           :

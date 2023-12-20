@@ -6,3 +6,24 @@
   justify-content: flex-start;
   gap: 1.5rem;
 }
+
+.empty-search-placeholder{
+  margin-top: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-search-placeholder .notFound-icon{
+  color: rgb(252, 233, 63);
+  transform: scale(1.8);
+}
+
+.empty-search-placeholder p{
+  margin-top: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgb(173, 173, 173);
+}
