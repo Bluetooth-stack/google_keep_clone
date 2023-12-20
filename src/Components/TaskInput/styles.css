@@ -7,7 +7,7 @@
   padding: 0.4rem 0.35rem;
   border-radius: 0.45rem;
   box-shadow: 0 0 8px rgb(128, 128, 128);
-  overflow: hidden;
+  transition: 0.3s ease-in-out;
 }
 
 .task-input-holder .title-input,
@@ -38,6 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .task-input-holder .buton-holder .edit-palate {
@@ -56,7 +57,7 @@
 }
 
 .task-input-holder .buton-holder .edit-palate .palate-icon:hover {
-  background-color: rgba(236, 236, 236, 0.89);
+  background-color: rgba(187, 187, 187, 0.325);
 }
 
 .buton-holder .create-button {
@@ -71,5 +72,37 @@
 }
 
 .buton-holder .create-button:hover {
-  background-color: rgba(236, 236, 236, 0.89);
+  background-color: rgba(187, 187, 187, 0.325);
+}
+
+.buton-holder .color-option-holder{
+  position: absolute;
+  bottom: -2.8rem;
+  box-shadow: 0 0 4px rgb(134, 134, 134);
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.2rem;
+  padding: 0.4rem 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.buton-holder .color-option-holder .view-color .reset-color-icon{
+  transform:  scale(0.98);
+  padding: 0.1rem 0.15rem 0.15rem 0;
+}
+
+.buton-holder .color-option-holder .view-color{
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.buton-holder .color-option-holder .view-color:hover{
+  border-color: rgb(61, 61, 61);
 }
