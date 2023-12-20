@@ -5,14 +5,19 @@ import { Context } from '../../../Context/Provider';
 
 function ListView() {
 
-    const {todo} = useContext(Context);
+    const { todo, filteredTodo } = useContext(Context);
 
     return (
         <div className='list-view'>
             {
-                todo.map((todo, indx) => (
-                    <Card curTodo={todo} key={todo.color + indx} listView={'yes'} />
-                ))
+                filteredTodo.length ?
+                    filteredTodo.map((todo, indx) => (
+                        <Card curTodo={todo} key={todo.color + indx} listView={'no'} />
+                    ))
+                    :
+                    todo.map((todo, indx) => (
+                        <Card curTodo={todo} key={todo.color + indx} listView={'no'} />
+                    ))
             }
         </div>
     )

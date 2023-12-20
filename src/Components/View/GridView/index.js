@@ -5,14 +5,19 @@ import { Context } from '../../../Context/Provider';
 
 function GridView() {
 
-  const {todo} = useContext(Context)
+  const { todo, filteredTodo } = useContext(Context)
 
   return (
     <div className='grid-view' >
       {
-        todo.map((todo, indx) => (
-          <Card curTodo={todo} key={todo.color + indx} listView={'no'} />
-        ))
+        filteredTodo.length ?
+          filteredTodo.map((todo, indx) => (
+            <Card curTodo={todo} key={todo.color + indx} listView={'no'} />
+          ))
+          :
+          todo.map((todo, indx) => (
+            <Card curTodo={todo} key={todo.color + indx} listView={'no'} />
+          ))
       }
 
     </div>

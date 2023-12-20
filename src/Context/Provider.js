@@ -11,10 +11,11 @@ function Provider({ children }) {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [todo, setTodo] = useLocalStorage('todos', []);
+    const [filteredTodo, setFilteredTodo] = useState([]);
 
     return (
         <Context.Provider value={{
-            sideBarOpen, setSideBarOpen, grid, setGrid, openInput, setOpenInput, selectedColor, setSelectedColor, title, setTitle, content, setContent, todo, setTodo
+            sideBarOpen, setSideBarOpen, grid, setGrid, openInput, setOpenInput, selectedColor, setSelectedColor, title, setTitle, content, setContent, todo, setTodo, filteredTodo, setFilteredTodo
         }}
 
         >

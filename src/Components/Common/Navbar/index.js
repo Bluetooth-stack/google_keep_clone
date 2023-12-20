@@ -12,7 +12,13 @@ import { Context } from '../../../Context/Provider';
 function Navbar() {
 
   const [mobileSearch, setMobileSearch] = useState(false);
-  const {setSideBarOpen, sideBarOpen, grid, setGrid} = useContext(Context);
+  const [searched, setSearched] = useState('');
+  const { setSideBarOpen, sideBarOpen, grid, setGrid, todo, setFilteredTodo } = useContext(Context);
+
+  function searchChange(e) {
+    setFilteredTodo(todo.filter((item)=>item?.title?.includes(e.target.value)));
+    setSearched(e.target.value);
+  }
 
   return (
     <div className='navbar'>
@@ -26,7 +32,11 @@ function Navbar() {
 
       <div className='search-holder'>
         <SearchIcon className='search-icon' />
-        <input type="text" className='search-field' name='search' placeholder='Search' />
+        <input
+          type="text" className='search-field'
+          name='search' placeholder='Search'
+          value={searched} onChange={searchChange}
+        />
       </div>
 
       <div className='view-holder'>
@@ -37,7 +47,12 @@ function Navbar() {
           mobileSearch &&
           <div className='mobile-search-holder'>
             <ArrowBackIosIcon className='arrowIcon' />
-            <input type="text" className='mobile-search-field' name='mobileSearch' placeholder='Search' autoFocus onBlur={() => { setMobileSearch(false) }} />
+            <input
+              type="text" className='mobile-search-field'
+              name='mobileSearch' placeholder='Search' value={searched}
+              autoFocus onBlur={() => { setMobileSearch(false) }}
+              onChange={searchChange}
+            />
           </div>
         }
 

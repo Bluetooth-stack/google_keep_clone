@@ -7,7 +7,10 @@ import { Context } from './Context/Provider'
 
 function App() {
 
-  const { content, title, selectedColor, setTodo, setOpenInput, setSelectedColor, setTitle, setContent, todo } = useContext(Context)
+  const {
+    content, title, selectedColor,
+    setTodo, setOpenInput, setSelectedColor,
+    setTitle, setContent, todo } = useContext(Context)
 
   function handleCreateTask(e) {
     if (content !== '' || title !== '') {
@@ -29,7 +32,7 @@ function App() {
     <div className="App" onClick={handleCreateTask}>
       <Navbar />
       <SideBar />
-      <Home handleCreateTask={handleCreateTask}  />
+      <Home handleCreateTask={handleCreateTask} />
     </div>
   );
 }
