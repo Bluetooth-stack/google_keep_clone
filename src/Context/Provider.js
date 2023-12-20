@@ -5,7 +5,7 @@ export const Context = createContext();
 
 function Provider({ children }) {
     const [sideBarOpen, setSideBarOpen] = useState(false);
-    const [grid, setGrid] = useState(true);
+    const [grid, setGrid] = useLocalStorage('cardGridView', true);
     const [openInput, setOpenInput] = useState(false)
     const [selectedColor, setSelectedColor] = useState('#FFFFFF')
     const [title, setTitle] = useState('');

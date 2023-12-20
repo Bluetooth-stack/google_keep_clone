@@ -19,11 +19,11 @@ function ListView() {
                     :
                     filteredTodo.length ?
                         filteredTodo.map((todo, indx) => (
-                            <Card curTodo={todo} key={todo.color + indx} listView={'no'} />
+                            <Card curTodo={todo} key={todo.color + indx} listView={'yes'} />
                         ))
                         :
                         todo.map((todo, indx) => (
-                            <Card curTodo={todo} key={todo.color + indx} listView={'no'} />
+                            <Card curTodo={todo} key={todo.color + indx} listView={'yes'} />
                         ))
             }
         </div>

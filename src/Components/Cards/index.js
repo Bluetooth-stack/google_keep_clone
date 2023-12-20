@@ -10,10 +10,12 @@ import DeleteModal from '../Common/Modal/DeleteModal';
 
 
 function Card({ curTodo, listView }) {
+
   const [selectedColor, setSelectedColor] = useState(curTodo.color);
   const [showPalate, setShowPalate] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showCardButton, setShowCardButton] = useState(false);
   const { todo, setTodo } = useContext(Context)
 
   useEffect(() => {
@@ -35,7 +37,7 @@ function Card({ curTodo, listView }) {
     setShowEditModal(true);
   }
 
-  function handleClickOnDelete(e){
+  function handleClickOnDelete(e) {
     e.stopPropagation();
     setShowDeleteModal(true);
   }
@@ -46,8 +48,8 @@ function Card({ curTodo, listView }) {
     )
   }
 
-  if(showDeleteModal){
-    return(
+  if (showDeleteModal) {
+    return (
       <DeleteModal selectedTodo={curTodo} setShowModal={setShowDeleteModal} />
     )
   }
@@ -57,14 +59,27 @@ function Card({ curTodo, listView }) {
       className={`card ${listView === 'yes' ? 'list-view-card' : listView === 'no' ? 'grid-view-card' : ''}`}
       style={{ background: selectedColor }}
       onClick={handleClickOnCard}
+      onMouseEnter={() => { setShowCardButton(true) }}
+      onMouseLeave={() => { setShowCardButton(false) }}
     >
       <h4>{curTodo?.title ? curTodo.title : ''}</h4>
       <p>{curTodo.content}</p>
 
       <div className='edit-option-holder'>
-        <ColorLensOutlinedIcon className='palate-icon'
-          onClick={(e) => { e.stopPropagation(); setShowPalate(() => !showPalate) }} />
-        <DeleteOutlineOutlinedIcon className='palate-icon' onClick={handleClickOnDelete} />
+        {
+          showCardButton &&
+          <>
+            <ColorLensOutlinedIcon
+              className='palate-icon'
+              onClick={(e) => { e.stopPropagation(); setShowPalate(() => !showPalate) }}
+            />
+
+            <DeleteOutlineOutlinedIcon
+              className='palate-icon'
+              onClick={handleClickOnDelete}
+            />
+          </>
+        }
       </div>
 
       {
@@ -77,6 +92,7 @@ function Card({ curTodo, listView }) {
           >
             <FormatColorResetOutlinedIcon className='reset-color-icon' />
           </span>
+
           {
             colors.map((color, indx) => (
               <span
